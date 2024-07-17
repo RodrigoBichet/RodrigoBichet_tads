@@ -1,13 +1,12 @@
 package br.edu.ifsul.cstsi.rodrigobichet_tads.api.corrida;
 
 import br.edu.ifsul.cstsi.rodrigobichet_tads.api.motorista.Motorista;
-import br.edu.ifsul.cstsi.rodrigobichet_tads.api.usuario.Usuario;
+import br.edu.ifsul.cstsi.rodrigobichet_tads.api.cliente.Cliente;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
-import jakarta.persistence.*;
+
 import lombok.*;
-import java.util.Collection;
 
 @Entity(name="Corrida")
 @Table(name = "corridas")
@@ -43,9 +42,9 @@ import java.util.Collection;
         private Motorista motoristaByIdMotorista;
         @ManyToOne
         @JoinColumn(
-                name = "id_usuario",
+                name = "id_cliente",
                 referencedColumnName = "id",
                 nullable = false
         )
-        private Usuario usuarioByIdUsuario;
+        private Cliente clienteByIdCliente;
 }
