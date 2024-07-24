@@ -4,5 +4,5 @@ import br.edu.ifsul.cstsi.rodrigobichet_tads.api.usuario.Usuario;
 import org.springframework.data.repository.Repository;
 
 public interface AutenticacaoRepository extends Repository<Usuario,Long> {
-    Usuario findByUsuario(String usuario);
+    Usuario findByEmail(String email);
 }
