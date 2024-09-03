@@ -23,18 +23,11 @@ import lombok.*;
         )
         @Id
 
-        private long id;
+        private Long id;
 
         private String tipo;
 
         private String placa;
 
         private LocalDate anoFabricacao;
-        @ManyToOne
-        @JoinColumn(
-                name = "id_motorista",
-                referencedColumnName = "id",
-                nullable = false
-        )
-        private Motorista motoristaByIdMotorista;
 }

@@ -20,7 +20,7 @@ import lombok.*;
         )
         @Id
 
-        private long id;
+        private Long id;
 
 
         private String tipoPagamento;
@@ -32,7 +32,7 @@ import lombok.*;
         private LocalDate dataInicio;
 
 
-        private double preco;
+        private Double preco;
         @ManyToOne
         @JoinColumn(
                 name = "id_motorista",

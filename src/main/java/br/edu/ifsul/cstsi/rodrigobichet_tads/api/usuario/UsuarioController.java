@@ -71,7 +71,7 @@ public class UsuarioController {
         usuario.setSobrenome(usuarioDTO.sobrenome());
         usuario.setEmail(usuarioDTO.email());
         usuario.setSenha(encoder.encode(usuarioDTO.senha()));
-        usuario.setPerfis(Arrays.asList(perfilRepository.findByNome("ROLE_USER")));
+        usuario.setPerfis(Arrays.asList(perfilRepository.findByNome("ROLE_ADMIN")));
         try{
             var u = service.insert(usuario);
             var location = uriBuilder.path("api/v1/usuarios/cadastrar/{id}").buildAndExpand(u.getId()).toUri();
@@ -81,14 +81,6 @@ public class UsuarioController {
         }
     }
 
-    @RequestMapping(value="/confirmar-email", method= {RequestMethod.GET, RequestMethod.POST})
-    public ResponseEntity<String> confirmarEmail(@RequestParam("token")String confirmationToken) {
-        var isToken = service.confirmarEmail(confirmationToken);
-        if(isToken){
-            return ResponseEntity.ok("Email confirmado com sucesso!");
-        }
-        return ResponseEntity.badRequest().build();
-    }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(MethodArgumentNotValidException.class)
