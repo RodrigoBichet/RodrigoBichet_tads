@@ -1,7 +1,6 @@
 package br.edu.ifsul.cstsi.rodrigobichet_tads.api.usuario;
 
 
-import br.edu.ifsul.cstsi.rodrigobichet_tads.api.usuario.validacoes.PerfilRepository;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import jakarta.validation.ValidationException;
