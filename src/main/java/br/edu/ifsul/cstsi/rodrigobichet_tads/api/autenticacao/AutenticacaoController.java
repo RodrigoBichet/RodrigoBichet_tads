@@ -36,7 +36,6 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @RestController //indica que essa classe deve ser adicionada ao Contexto do aplicativo como um Bean da camada de controle API REST
@@ -52,7 +51,7 @@ public class AutenticacaoController {
 
 
     @PostMapping
-    public ResponseEntity<TokenJwtDTO> efetuaLogin(@Valid @RequestBody UsuarioDTO data){
+    public ResponseEntity<TokenJwtDTO> efetuaLogin(@Valid @RequestBody UsuarioAutenticacaoDTO data){
         var authenticationDTO = new UsernamePasswordAuthenticationToken(data.email(), data.senha()); //converte o DTO em DTO do Spring Security
 
 
